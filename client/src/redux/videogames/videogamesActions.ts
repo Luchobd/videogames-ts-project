@@ -21,7 +21,7 @@ export const getAllVideogames =
   ): Promise<AxiosResponse | AxiosError> => {
     try {
       const resp: AxiosResponse = await axios.get(
-        "http://localhost:3001/videogames"
+        "http://localhost:3005/videogames"
       );
       return dispatch(getVideogames(resp.data));
     } catch (error) {
@@ -43,7 +43,7 @@ export const getNameVideogame =
   ): Promise<AxiosResponse | AxiosError> => {
     try {
       const resp: AxiosResponse = await axios.get(
-        `http://localhost:3001/videogames?name=${name}`
+        `http://localhost:3005/videogames?name=${name}`
       );
       return dispatch(getNameVideogames(resp.data));
     } catch (error) {
@@ -54,7 +54,7 @@ export const getNameVideogame =
 // Create Videogames
 export const postVideogame = (payload: any) => async () => {
   const resp: AxiosResponse = await axios.post(
-    "http://localhost:3001/videogames",
+    "http://localhost:3005/videogames",
     payload
   );
   return resp;
@@ -66,7 +66,7 @@ export const getDetailVideogames =
   async (dispatch: (arg0: { payload: Object; type: string }) => any) => {
     try {
       const resp: AxiosResponse = await axios.get(
-        `http://localhost:3001/videogames/${id}`
+        `http://localhost:3005/videogames/${id}`
       );
       return dispatch(getDetail(resp.data));
     } catch (error) {
